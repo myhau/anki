@@ -8,7 +8,7 @@ sub _base { join("/", "https://ankiweb.net", @_) }
 
 sub auth {
     my ($self) = @_;
-    $self->_post( _base, [ username => $self->{login}, password => $self->{pass} ] );
+    $self->_post( _base("account/login"), [ username => $self->{login}, password => $self->{pass} ] );
     return $self;
 }
 
